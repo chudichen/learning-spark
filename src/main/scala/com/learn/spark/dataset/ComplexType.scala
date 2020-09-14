@@ -8,7 +8,7 @@ import org.apache.spark.sql.SparkSession
  * 使用嵌套对象创建Dataset
  *
  * @author chudichen
- * @date 2020-09-14
+ * @since 2020-09-14
  */
 object ComplexType extends BaseSpark {
 

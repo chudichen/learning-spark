@@ -8,7 +8,7 @@ import org.apache.spark.{SparkConf, SparkContext}
  * 计算以及检查点
  *
  * @author chudichen
- * @date 2020-09-08
+ * @since 2020-09-08
  */
 object Computations extends BaseSpark {
 

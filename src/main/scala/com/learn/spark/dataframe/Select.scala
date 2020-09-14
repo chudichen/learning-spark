@@ -6,7 +6,7 @@ import org.apache.spark.sql.functions._
 
 /**
  * @author chudichen
- * @date 2020-09-10
+ * @since 2020-09-10
  */
 object Select extends BaseSpark {
 

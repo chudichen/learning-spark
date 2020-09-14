@@ -10,7 +10,7 @@ import scala.collection.mutable
  * User Define Function
  *
  * @author chudichen
- * @date 2020-09-11
+ * @since 2020-09-11
  */
 object UDF extends BaseSpark{
 

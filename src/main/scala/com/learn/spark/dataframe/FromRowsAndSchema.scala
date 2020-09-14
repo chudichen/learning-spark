@@ -8,7 +8,7 @@ import org.apache.spark.sql.{Row, SparkSession}
  * 通过RDD[Row]和合成的schema来创建DataFrame
  *
  * @author chudichen
- * @date 2020-09-09
+ * @since 2020-09-09
  */
 object FromRowsAndSchema extends BaseSpark{
 

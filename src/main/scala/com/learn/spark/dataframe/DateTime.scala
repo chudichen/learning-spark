@@ -11,7 +11,7 @@ import org.apache.spark.sql.functions._
  * 针对DateType和TimestampType的别查询
  *
  * @author chudichen
- * @date 2020-09-10
+ * @since 2020-09-10
  */
 object DateTime extends BaseSpark {
 

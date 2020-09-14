@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 
 /**
  * @author chudichen
- * @date 2020-09-08
+ * @since 2020-09-08
  */
 object SimpleCreation extends BaseSpark {
 

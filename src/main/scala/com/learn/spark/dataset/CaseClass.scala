@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession
  * 使用case class来生成dataset
  *
  * @author chudichen
- * @date 2020-09-11
+ * @since 2020-09-11
  */
 object CaseClass extends BaseSpark{
 

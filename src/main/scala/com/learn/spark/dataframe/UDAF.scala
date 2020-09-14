@@ -9,7 +9,7 @@ import org.apache.spark.sql.types.{DataType, DoubleType, StructType}
  * 用户自定义聚合函数
  *
  * @author chudichen
- * @date 2020-09-11
+ * @since 2020-09-11
  */
 object UDAF extends BaseSpark {
 

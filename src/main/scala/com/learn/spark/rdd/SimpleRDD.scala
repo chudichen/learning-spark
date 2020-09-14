@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
  * RDD的Hello world
  *
  * @author chudichen
- * @date 2020-09-08
+ * @since 2020-09-08
  */
 object SimpleRDD extends BaseSpark {
 

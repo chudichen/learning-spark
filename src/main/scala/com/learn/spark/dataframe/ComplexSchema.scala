@@ -10,7 +10,7 @@ import org.apache.spark.sql.{Row, SparkSession}
  * 我们会尝试DataFrame中更多的可能性
  *
  * @author chudichen
- * @date 2020-09-10
+ * @since 2020-09-10
  */
 object ComplexSchema extends BaseSpark {
 

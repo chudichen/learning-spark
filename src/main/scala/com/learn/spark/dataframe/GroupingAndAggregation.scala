@@ -8,7 +8,7 @@ import org.apache.spark.sql.{Column, SparkSession}
  * 演示grouping和aggregation的用法
  *
  * @author chudichen
- * @date 2020-09-09
+ * @since 2020-09-09
  */
 object GroupingAndAggregation extends BaseSpark {
 

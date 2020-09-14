@@ -8,7 +8,7 @@ import org.apache.spark.sql.SparkSession
  * DataFame可以通过RDD[Row]或者Schema创建
  *
  * @author chudichen
- * @date 2020-09-08
+ * @since 2020-09-08
  */
 object Basic extends BaseSpark{
 

@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession
  * 注意：不同参数的range实现会有不同
  *
  * @author chudichen
- * @date 2020-09-10
+ * @since 2020-09-10
  */
 object Range extends BaseSpark {
 

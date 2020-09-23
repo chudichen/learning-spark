@@ -6,35 +6,40 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
- * 演示简单的通过分批每次累加数据值，这次是通过
- * 设置全局变量，这种做法很常用，但并不是最有效
- * 以及最好的方法。
+ * 滑动窗口
  *
  * @author chudichen
- * @since 2020-09-21
+ * @since 2020-09-23
  */
-object Accumulation extends BaseSpark {
+object Windowing extends BaseSpark {
 
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName("Accumulation").setMaster("local[4]")
+    val conf = new SparkConf().setAppName("Windowing").setMaster("local[4]")
     val sc = new SparkContext(conf)
+
+    // 每秒钟处理一次
     val ssc = new StreamingContext(sc, Seconds(1))
-
-    var acc = sc.parallelize(Seq(0), 4)
-
     val qm = new QueueMaker(sc, ssc)
+
+    // 创建流
     val stream = qm.inputStream
-    stream.foreachRDD(r => {
-      acc = acc ++ r
-      println("Count in accumulator: " + acc.count)
-      println("Batch size: " + r.count())
+
+    // 注册数据，每2秒统计前5秒的数据
+    stream.window(Seconds(5), Seconds(2)).foreachRDD(r => {
+      if (r.count() == 0) {
+        println("Empty")
+      } else {
+        println("Count = " + r.count() + " min = " + r.min() + " max = " + r.max())
+      }
     })
+
+    // streaming启动
     ssc.start()
 
     new Thread("Delayed Termination") {
       override def run(): Unit = {
         qm.populateQueue()
-        Thread.sleep(15000)
+        Thread.sleep(20000)
         println("*** stopping streaming")
         ssc.stop()
       }
@@ -44,11 +49,7 @@ object Accumulation extends BaseSpark {
       ssc.awaitTermination()
       println("*** streaming terminated")
     } catch {
-      case e: Exception => {
-        println("*** streaming exception caught in monitor thread")
-      }
+      case exception: Exception => println("*** streaming exception caught in monitor thread")
     }
-
-    println("*** done")
   }
 }
